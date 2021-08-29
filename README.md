@@ -5,6 +5,8 @@
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/UnstoppableMango/dotnet-proxmox-client/NuGet%20Publish)](https://github.com/UnstoppableMango/dotnet-proxmox-client/actions/workflows/nuget_publish.yml)
 [![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/UnstoppableMango/dotnet-proxmox-client)](https://libraries.io/github/UnstoppableMango/dotnet-proxmox-client)
 
+.NET client for making requests to the Proxmox REST API
+
 ## Development
 
 ### Lint Hooks
