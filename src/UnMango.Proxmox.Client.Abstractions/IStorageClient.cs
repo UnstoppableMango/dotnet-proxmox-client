@@ -2,18 +2,15 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-using UnMango.Proxmox.Client.Abstractions.Request.Storage;
-using UnMango.Proxmox.Client.Abstractions.Response.Storage;
-using UnMango.Proxmox.Client.Abstractions.Storage;
+using UnMango.Proxmox.Client.Request.Storage;
+using UnMango.Proxmox.Client.Response.Storage;
+using UnMango.Proxmox.Client.Storage;
 
-namespace UnMango.Proxmox.Client.Abstractions
+namespace UnMango.Proxmox.Client
 {
     /// <summary>
     /// Client for interacting with the Proxmox storage REST API.
     /// </summary>
-    /// <remarks>
-    /// Only list entries where you have 'Datastore.Audit' or 'Datastore.AllocateSpace' permissions on '/storage/&lt;storage&gt;'
-    /// </remarks>
     [PublicAPI]
     public interface IStorageClient
     {
@@ -26,12 +23,20 @@ namespace UnMango.Proxmox.Client.Abstractions
         Task<CreateStorageResponse> CreateAsync(CreateStorageRequest request, CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Delete storage configuration.
+        /// </summary>
+        /// <param name="storage"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task DeleteAsync(string storage, CancellationToken cancellationToken = default);
+
+        /// <summary>
         /// Read storage configuration.
         /// </summary>
         /// <param name="storage"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        Task<object> Get(string storage, CancellationToken cancellationToken = default);
+        Task<GetStorageResponseBase> GetAsync(string storage, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Storage index.
@@ -39,7 +44,10 @@ namespace UnMango.Proxmox.Client.Abstractions
         /// <param name="type">Only list storage of a specific type.</param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        IAsyncEnumerable<string> GetAll(StorageType? type = null, CancellationToken cancellationToken = default);
+        /// <remarks>
+        /// Only list entries where you have 'Datastore.Audit' or 'Datastore.AllocateSpace' permissions on '/storage/&lt;storage&gt;'
+        /// </remarks>
+        IAsyncEnumerable<GetStorageResponseBase> GetAll(StorageType? type = null, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Storage index.
@@ -47,6 +55,19 @@ namespace UnMango.Proxmox.Client.Abstractions
         /// <param name="type">Only list storage of a specific type.</param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        Task<IEnumerable<string>> GetAllAsync(StorageType? type = null, CancellationToken cancellationToken = default);
+        /// <remarks>
+        /// Only list entries where you have 'Datastore.Audit' or 'Datastore.AllocateSpace' permissions on '/storage/&lt;storage&gt;'
+        /// </remarks>
+        Task<IEnumerable<GetStorageResponseBase>> GetAllAsync(
+            StorageType? type = null,
+            CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update storage configuration.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task<UpdateStorageResponse> UpdateAsync(UpdateStorageRequest request, CancellationToken cancellationToken = default);
     }
 }

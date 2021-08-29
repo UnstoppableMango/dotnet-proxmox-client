@@ -1,4 +1,4 @@
-namespace UnMango.Proxmox.Client.Abstractions.Storage
+namespace UnMango.Proxmox.Client.Storage
 {
     public enum SmbVersion
     {

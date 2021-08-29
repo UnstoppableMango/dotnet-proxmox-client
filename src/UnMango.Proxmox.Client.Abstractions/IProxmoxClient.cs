@@ -1,9 +1,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-using UnMango.Proxmox.Client.Abstractions.Response;
+using UnMango.Proxmox.Client.Response;
 
-namespace UnMango.Proxmox.Client.Abstractions
+namespace UnMango.Proxmox.Client
 {
     [PublicAPI]
     public interface IProxmoxClient
