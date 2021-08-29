@@ -1,0 +1,18 @@
+<Project>
+  
+    <Import Project="../Directory.Build.props" />
+    
+    <PropertyGroup>
+      <IsPackable>true</IsPackable>
+      <PublishRepositoryUrl>true</PublishRepositoryUrl>
+      <EmbedUntrackedSources>true</EmbedUntrackedSources>
+      <IncludeSymbols>true</IncludeSymbols>
+      <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="JetBrains.Annotations" Version="2021.2.0" PrivateAssets="all" />
+    </ItemGroup>
+  
+  </Project>
+  

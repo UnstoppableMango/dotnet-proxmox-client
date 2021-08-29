@@ -1,0 +1,47 @@
+name: Pull Request
+on:
+  pull_request:
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  
+jobs:
+  dotnet_build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+
+      - name: Add github source credentials
+        run: |
+          dotnet nuget update source \
+            github \
+            --username ${{ github.actor }} \
+            --password ${{ secrets.GITHUB_TOKEN }} \
+            --store-password-in-clear-text
+
+      - name: Restore dependencies
+        run: dotnet restore
+        
+      - name: Lint solution
+        run: dotnet format --verify-no-changes --no-restore
+
+      - name: Build solution
+        run: dotnet build --no-restore
+
+      - name: Run tests
+        run: dotnet test --collect:"XPlat Code Coverage" --results-directory "./coverage" --no-build --verbosity normal
+        
+      - name: Move coverage output
+        run: mv coverage/**/coverage.cobertura.xml coverage
+
+      - name: Upload code coverage
+        uses: codecov/codecov-action@v2
+        with:
+          directory: "./coverage"
+          files: "coverage.cobertura.xml"
+          flags: unittests
