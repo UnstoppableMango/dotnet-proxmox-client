@@ -3,7 +3,7 @@ name: NuGet Publish
 on:
   push:
     branches:
-      - master
+      - main
     tags:
       - "*.*.*"
     paths:
