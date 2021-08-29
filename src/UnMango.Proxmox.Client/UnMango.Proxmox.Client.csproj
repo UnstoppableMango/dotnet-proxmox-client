@@ -5,8 +5,4 @@
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MinVer" Version="2.5.0" PrivateAssets="All" />
-  </ItemGroup>
-
 </Project>

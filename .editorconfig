@@ -20,6 +20,7 @@ indent_size = 2
 [*.{cs,vb}]
 indent_size = 4
 dotnet_sort_system_directives_first = true
+dotnet_diagnostic.IDE0005.severity = warning
 
 # CSharp formatting rules
 [*.cs]
