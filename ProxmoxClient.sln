@@ -4,8 +4,54 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{971C0A87-A138-47D6-BA8F-A7B319340A5D}"
+ProjectSection(SolutionItems) = preProject
+	src\Directory.Build.props = src\Directory.Build.props
+EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnMango.Proxmox.Client", "src\UnMango.Proxmox.Client\UnMango.Proxmox.Client.csproj", "{5E644E3B-6949-45D8-A166-7FCF2B5AE518}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{427D498B-310B-4F6E-ACD4-987C43254985}"
+ProjectSection(SolutionItems) = preProject
+	test\Directory.Build.props = test\Directory.Build.props
+	test\xunit.runner.json = test\xunit.runner.json
+EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnMango.Proxmox.Client.Tests", "test\UnMango.Proxmox.Client.Tests\UnMango.Proxmox.Client.Tests.csproj", "{B189372B-9160-4324-89ED-C772A5B037E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{655F1765-715D-4679-81D9-10F93EED98F7}"
+ProjectSection(SolutionItems) = preProject
+	README.md = README.md
+	COPYING = COPYING
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{98C205A8-706B-4C4D-BE8D-E1334A4E21A0}"
+ProjectSection(SolutionItems) = preProject
+	Directory.Build.props = Directory.Build.props
+	global.json = global.json
+	NuGet.Config = NuGet.Config
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{C9CF6298-AFB3-4517-A62D-FE85D47F83FE}"
+ProjectSection(SolutionItems) = preProject
+	.github\dependabot.yml = .github\dependabot.yml
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{6DF5C4F9-FB00-4723-93F8-6879EBAE9F4C}"
+ProjectSection(SolutionItems) = preProject
+	.github\workflows\nuget_publish.yml = .github\workflows\nuget_publish.yml
+	.github\workflows\pull_request.yml = .github\workflows\pull_request.yml
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{6C97695F-6690-439F-86A2-CE5F58CE4373}"
+ProjectSection(SolutionItems) = preProject
+	.config\dotnet-tools.json = .config\dotnet-tools.json
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{330A3821-1F28-47EA-8999-BD01A838AD57}"
+ProjectSection(SolutionItems) = preProject
+	.editorconfig = .editorconfig
+	.gitignore = .gitignore
+EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,8 +78,23 @@ Global
 		{5E644E3B-6949-45D8-A166-7FCF2B5AE518}.Release|x64.Build.0 = Release|Any CPU
 		{5E644E3B-6949-45D8-A166-7FCF2B5AE518}.Release|x86.ActiveCfg = Release|Any CPU
 		{5E644E3B-6949-45D8-A166-7FCF2B5AE518}.Release|x86.Build.0 = Release|Any CPU
+		{B189372B-9160-4324-89ED-C772A5B037E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B189372B-9160-4324-89ED-C772A5B037E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B189372B-9160-4324-89ED-C772A5B037E1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B189372B-9160-4324-89ED-C772A5B037E1}.Debug|x64.Build.0 = Debug|Any CPU
+		{B189372B-9160-4324-89ED-C772A5B037E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B189372B-9160-4324-89ED-C772A5B037E1}.Debug|x86.Build.0 = Debug|Any CPU
+		{B189372B-9160-4324-89ED-C772A5B037E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B189372B-9160-4324-89ED-C772A5B037E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B189372B-9160-4324-89ED-C772A5B037E1}.Release|x64.ActiveCfg = Release|Any CPU
+		{B189372B-9160-4324-89ED-C772A5B037E1}.Release|x64.Build.0 = Release|Any CPU
+		{B189372B-9160-4324-89ED-C772A5B037E1}.Release|x86.ActiveCfg = Release|Any CPU
+		{B189372B-9160-4324-89ED-C772A5B037E1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5E644E3B-6949-45D8-A166-7FCF2B5AE518} = {971C0A87-A138-47D6-BA8F-A7B319340A5D}
+		{B189372B-9160-4324-89ED-C772A5B037E1} = {427D498B-310B-4F6E-ACD4-987C43254985}
+		{6DF5C4F9-FB00-4723-93F8-6879EBAE9F4C} = {C9CF6298-AFB3-4517-A62D-FE85D47F83FE}
+		{6C97695F-6690-439F-86A2-CE5F58CE4373} = {98C205A8-706B-4C4D-BE8D-E1334A4E21A0}
 	EndGlobalSection
 EndGlobal

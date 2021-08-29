@@ -1,0 +1,30 @@
+root = true
+
+[*]
+insert_final_newline = true
+indent_style = space
+
+[*.{xml,csproj,proj,props,targets}]
+indent_size = 2
+
+[NuGet.Config]
+indent_size = 2
+
+[*.json]
+indent_size = 2
+
+[*.{yml,yaml}]
+indent_size = 2
+
+# .NET formatting rules
+[*.{cs,vb}]
+indent_size = 4
+dotnet_sort_system_directives_first = true
+dotnet_diagnostic.IDE0005.severity = warning
+
+# CSharp formatting rules
+[*.cs]
+csharp_new_line_before_open_brace = accessors, control_blocks, events, indexers, methods, properties, types
+
+[**/*Benchmarks*/*.cs]
+dotnet_code_quality.CA1822.api_surface = private, internal

@@ -1,0 +1,17 @@
+version: 2
+
+updates:
+  - package-ecosystem: nuget
+    directory: "/src/UnMango.Proxmox.Client"
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: "/test/UnMango.Proxmox.Client.Test"
+    schedule:
+      interval: daily
+
+  - package-ecosystem: nuget
+    directory: "/test/UnMango.Proxmox.Client.Benchmarks"
+    schedule:
+      interval: daily
