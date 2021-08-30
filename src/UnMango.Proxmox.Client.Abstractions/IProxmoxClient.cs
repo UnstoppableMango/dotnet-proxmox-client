@@ -1,7 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-using UnMango.Proxmox.Client.Response;
 
 namespace UnMango.Proxmox.Client
 {

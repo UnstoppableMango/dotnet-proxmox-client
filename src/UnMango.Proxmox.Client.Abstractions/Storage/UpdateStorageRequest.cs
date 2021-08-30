@@ -1,7 +1,6 @@
 using JetBrains.Annotations;
-using UnMango.Proxmox.Client.Storage;
 
-namespace UnMango.Proxmox.Client.Request.Storage
+namespace UnMango.Proxmox.Client.Storage
 {
     [PublicAPI]
     public record UpdateStorageRequest(string Storage)

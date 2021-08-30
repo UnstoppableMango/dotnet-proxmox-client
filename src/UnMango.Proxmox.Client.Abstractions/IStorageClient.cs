@@ -2,8 +2,6 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-using UnMango.Proxmox.Client.Request.Storage;
-using UnMango.Proxmox.Client.Response.Storage;
 using UnMango.Proxmox.Client.Storage;
 
 namespace UnMango.Proxmox.Client

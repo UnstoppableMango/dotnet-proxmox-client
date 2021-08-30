@@ -2,8 +2,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-using UnMango.Proxmox.Client.Request.Pools;
-using UnMango.Proxmox.Client.Response.Pools;
+using UnMango.Proxmox.Client.Pools;
 
 namespace UnMango.Proxmox.Client
 {
@@ -20,6 +19,14 @@ namespace UnMango.Proxmox.Client
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         Task CreateAsync(CreatePoolRequest request, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Delete pool.
+        /// </summary>
+        /// <param name="poolId"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task DeleteAsync(string poolId, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get pool configuration.

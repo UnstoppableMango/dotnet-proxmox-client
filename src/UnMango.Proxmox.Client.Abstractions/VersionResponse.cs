@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 
-namespace UnMango.Proxmox.Client.Response
+namespace UnMango.Proxmox.Client
 {
     [PublicAPI]
     public record VersionResponse(

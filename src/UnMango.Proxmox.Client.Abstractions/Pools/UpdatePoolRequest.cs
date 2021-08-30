@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 
-namespace UnMango.Proxmox.Client.Request.Pools
+namespace UnMango.Proxmox.Client.Pools
 {
     /// <summary>
     /// Request to update pool data.
