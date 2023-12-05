@@ -15,7 +15,7 @@
     <PackageReference Include="JetBrains.Annotations" Version="2021.2.0" PrivateAssets="all" />
     <PackageReference Include="MinVer" Version="2.5.0" PrivateAssets="All" />
     <PackageReference Include="Roslynator.Analyzers" Version="3.2.2" PrivateAssets="all" />
-    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.27.0.35380" PrivateAssets="all" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="9.14.0.81108" PrivateAssets="all" />
   </ItemGroup>
 
 </Project>
